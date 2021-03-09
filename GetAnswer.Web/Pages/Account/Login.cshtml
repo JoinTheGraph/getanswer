@@ -1,0 +1,30 @@
+@page "/account/login"
+
+@using GetAnswer.Web.Pages.Account
+
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+
+    <p>
+        <label for="email-input">Email</label>
+        <input type="text" asp-for="Form.Email" />
+    </p>
+    <p>
+        <label for="password-input">Password</label>
+        <input type="password" asp-for="Form.Password" />
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" asp-for="Form.RememberMe" /> Remember me
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Login" />
+    </p>
+</form>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] | GetAnswer</title>
+
+    <link rel="stylesheet" href="~/styles/site.css" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Hello @(User.Identity.Name)! <a asp-page="/Account/Logout">Logout</a></p>
+    }
+    else
+    {
+        <p><a asp-page="/Account/Login">Login</a></p>
+    }
+    
+    @RenderBody()
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
